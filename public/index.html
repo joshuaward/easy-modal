@@ -6,30 +6,73 @@
     <title>New site</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 <body>
-    <h1>Hello, World!</h1>
+	<button data-modal-trigger="trigger-1" class="trigger">
+		<i class="fa fa-fire" aria-hidden="true"></i>
+		Modal 1
+	</button>
+	<button data-modal-trigger="trigger-2" class="trigger">
+		<i class="fa fa-fire" aria-hidden="true"></i>
+		Modal 2
+	</button>
+	<button data-modal-trigger="trigger-3" class="trigger">
+		<i class="fa fa-fire" aria-hidden="true"></i>
+		Modal 3
+	</button>
+
+	<div data-modal="trigger-1" class="modal">
+		<article class="content-wrapper">
+			<button class="close"></button>
+			<header class="modal-header">
+				<h2>This is a modal 1</h2>
+			</header>
+			<div class="content">
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
+			</div>
+			<footer class="modal-footer">
+				<button>Accept</button>
+				<button>Decline</button>
+			</footer>
+		</article>
+	</div>
+
+	<div data-modal="trigger-2" class="modal">
+		<article class="content-wrapper">
+			<button class="close"></button>
+			<header class="modal-header">
+				<h2>This is a modal 2</h2>
+			</header>
+			<div class="content">
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
+			</div>
+			<footer class="modal-footer">
+				<button>Accept</button>
+				<button>Decline</button>
+			</footer>
+		</article>
+	</div>
+
+	<div data-modal="trigger-3" class="modal">
+		<article class="content-wrapper">
+			<button class="close"></button>
+			<header class="modal-header">
+				<h2>This is a modal 3</h2>
+			</header>
+			<div class="content">
+				<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui.</p>
+			</div>
+			<footer class="modal-footer">
+				<button>Accept</button>
+				<button>Decline</button>
+			</footer>
+		</article>
+	</div>
 
 
 
 
-
-
-
-<!-- jQuery -->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<!-->
-<!-- Greensock TweenMax --remove_this_to_add>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-<!-->
-<!-- ScrollMagic --remove_this_to_add>
-<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-<!-->
-<!-- p5js - Canvas animation --remove_this_to_add>
-<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.7/p5.js"></script>
-<!-->
-<!-- Main app code -->
-<script src="js/app.js"></script>
-
+	<script src="js/app.js"></script>
 </body>
 </html>

@@ -1,62 +1,188 @@
 @import 'vendor/_reset';
 
-/*** Example styles ***/
+$base-duration: 0.25s;
+
+// Colors
+$primary: slategray;
+$accent: tomato;
+$white: whitesmoke;
+$green: #2ecc71;
+$red: #e74c3c;
+
+// Breakpoints
+$sm: 20rem;
+$med: 48rem;
+$lg: 64rem;
+
+*, *:before, *:after {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 16px;
+	font-smooth: auto;
+	font-weight: 300;
+	line-height: 1.5;
+	color: #444;
+	background-color: $primary;
+}
+
+button {
+	cursor: pointer;
+}
+
 body {
-  background: #36a1d9;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100vh;
 }
 
-h1 {
-  // Transition: Used for hover effect
-  transition: all 3s ease-out;
+.trigger {
+	margin: 0 0.75rem;
+	padding: 0.625rem 1.25rem;
+	border: none;
+	border-radius: 0.25rem;
+	box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.12), 0 0.0625rem 0.125rem rgba(0,0,0,0.24);
+	transition: all $base-duration cubic-bezier(.25,.8,.25,1);
+	font-size: 0.875rem;
+	font-weight: 300;
 
-  // Animation: Used with the keyframes below
-  animation: pulsate 8s ease-out infinite;
+	i {
+		margin-right: 0.3125rem;
+	}
 
-  // Normal stylin'
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  margin: 0;
-
-  font-family: Helvetica, Arial, Sand-serif;
-  font-weight: bold;
-  font-size: 6em;
-  color: white;
-  color: rgba(255,255,255,0.8);
-
-  text-align: center;
-  text-transform: uppercase;
-
+	&:hover {
+		box-shadow: 0 0.875rem 1.75rem rgba(0,0,0,0.25), 0 0.625rem 0.625rem rgba(0,0,0,0.22);
+	}
 }
 
-h1:hover {
-  color: #5cefaf;
+.modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,0.8);
+	transform: scale(0.0);
+	transition: transform $base-duration;
+
+	&.open {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: scale(1.0);
+		transition: transform $base-duration;
+	}
+
+	.content-wrapper {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		width: 50%;
+		margin: 0;
+		padding: 2.5rem;
+		background-color: white;
+		border-radius: 0.3125rem;
+
+		.close {
+			position: absolute;
+			top: 0.5rem;
+			right: 0.5rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2.5rem;
+			height: 2.5rem;
+			border: none;
+			background-color: transparent;
+			font-size: 1.5rem;
+			transition: $base-duration linear;
+
+			&:before, &:after {
+				position: absolute;
+				content: '';
+				width: 1.25rem;
+				height: 0.125rem;
+				background-color: black;
+			}
+
+			&:before {
+				transform: rotate(-45deg);
+			}
+
+			&:after {
+				transform: rotate(45deg);
+			}
+
+			&:hover {
+				transform: rotate(360deg);
+
+				&:before, &:after {
+					background-color: $accent;
+				}
+			}
+		}
+
+		.modal-header {
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+			margin: 0;
+			padding: 0 0 1.25rem;
+
+			h2 {
+				font-size: 1.5rem;
+				font-weight: bold;
+			}
+		}
+
+		.content {
+			position: relative;
+			display: flex;
+
+			p {
+				font-size: 0.875rem;
+				line-height: 1.75;
+			}
+		}
+
+		.modal-footer {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			width: 100%;
+			margin: 0;
+			padding: 1.875rem 0 0;
+
+			> button {
+				margin-left: 0.625rem;
+				padding: 0.625rem 1.25rem;
+				border: none;
+				background-color: $primary;
+				color: white;
+				font-size: 0.87rem;
+				font-weight: 300;
+
+				&:first-child {
+					background-color: $green;
+				}
+
+				&:last-child {
+					background-color: $red;
+				}
+			}
+		}
+	}
 }
-
-/*** Keyframes - used with the "animation" property in the h1 ***/
-
-@keyframes pulsate {
-  0%, 11% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-  50%, 61% {
-    transform: translate(-50%, -50%) scale(1.5);
-    filter: none;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    filter: blur(5px);
-  }
-}
-
-/*** Media queries for adjusting to different screen sizes ***/
-
-@media only screen and (max-width: 600px) {
-  h1 {
-    font-size: 2em;
-  }
-}
-
